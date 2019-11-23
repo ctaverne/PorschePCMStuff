@@ -142,7 +142,7 @@ build_fec_container () {
     fi
 
     echo -n -e "$FECCOUNTN\x00\x00\x00"$LEFECSHEX"\x01\x00\x00\x00\x03\x00\x00\x00\xFF\x00\x00\x00">> $output_dir/FecContainer.tmp
-    echo -n -e '\x01\x00\x00\x00'$FILESIZE > $output_dir/FecContainer.fec & cat $output_dir/FecContainer.tmp >> $output_dir/FecContainer.fec
+    echo -n -e '\x01\x00\x00\x00'$FILESIZE > $output_dir/FecContainer.fec && cat $output_dir/FecContainer.tmp >> $output_dir/FecContainer.fec
 
     #verify
     if [ -f "$output_dir/FecContainer.tmp" ]; then
